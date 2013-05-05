@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="40" height="30" tilewidth="20" tileheight="20">
+ <tileset firstgid="1" name="background" tilewidth="20" tileheight="20">
+  <image source="../tiles/tileset20.png" width="40" height="60"/>
+  <terraintypes>
+   <terrain name="New Terrain" tile="-1"/>
+  </terraintypes>
+  <tile id="0">
+   <properties>
+    <property name="blocked" value="true"/>
+    <property name="type" value="terrain"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="type" value="terrain"/>
+   </properties>
+  </tile>
+  <tile id="2" terrain="0,0,0,0">
+   <properties>
+    <property name="type" value="exit"/>
+   </properties>
+  </tile>
+  <tile id="3" terrain="0,0,0,0">
+   <properties>
+    <property name="type" value="exit"/>
+   </properties>
+  </tile>
+  <tile id="4" terrain="0,0,0,0">
+   <properties>
+    <property name="type" value="exit"/>
+   </properties>
+  </tile>
+  <tile id="5" terrain="0,0,0,0">
+   <properties>
+    <property name="type" value="exit"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="7" name="colors" tilewidth="20" tileheight="20">
+  <image source="../tiles/colors.png" width="120" height="40"/>
+  <tile id="0">
+   <properties>
+    <property name="blocked" value="false"/>
+    <property name="color" value="none"/>
+    <property name="type" value="air"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="blocked" value="true"/>
+    <property name="color" value="yellow"/>
+    <property name="type" value="obstacle"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="blocked" value="true"/>
+    <property name="color" value="green"/>
+    <property name="type" value="obstacle"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="blocked" value="true"/>
+    <property name="color" value="red"/>
+    <property name="type" value="obstacle"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="blocked" value="true"/>
+    <property name="color" value="cyan"/>
+    <property name="type" value="obstacle"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="blocked" value="true"/>
+    <property name="color" value="pink"/>
+    <property name="type" value="obstacle"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="blocked" value="false"/>
+    <property name="color" value="none"/>
+    <property name="type" value="air"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="color" value="yellow"/>
+    <property name="type" value="powerup"/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="color" value="green"/>
+    <property name="type" value="powerup"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="color" value="red"/>
+    <property name="type" value="powerup"/>
+   </properties>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="color" value="cyan"/>
+    <property name="type" value="powerup"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="color" value="pink"/>
+    <property name="type" value="powerup"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="background" width="40" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3OoQEAAAgDoOn/R3uFWgh0OkkDALCqnvjd/ACAXQPil38iwBIAAA==
+  </data>
+ </layer>
+ <layer name="colors" width="40" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3RMQoAIAhA0aClqfsft6UDRBkIvgeu+sHWAKho7MlK35uffTNgx0lfD7hzK/t/AQCqWVYLYu/AEgAA
+  </data>
+ </layer>
+</map>
