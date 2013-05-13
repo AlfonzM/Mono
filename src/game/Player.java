@@ -87,5 +87,6 @@ public class Player extends Character{
 		Sounds.jump.play();
 		jumping = true;
 	}
+	
 
 }

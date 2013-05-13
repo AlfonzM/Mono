@@ -64,13 +64,13 @@ public class Character {
 		
 		solidBlock = new Rectangle(xBlock * 20, yBlock * 20, Play.TILESIZE, Play.TILESIZE);
 		
-		if(newX > Game.GWIDTH - sprite.getWidth()/3 || newX < 0){
-			isblocked = true;
+		if(newX > Game.GWIDTH - sprite.getWidth()/3 || newX < 0){ // keep within borders
+			return true;
 		}
 		else{
 			for(int i = 0; i < 4; i++){
-				if(Play.level.blocked[xBlock][yBlock+i] && pBounds.intersects(solidBlock))
-					isblocked = true;
+				if(Play.level.blocked[xBlock][yBlock+i] && pBounds.intersects(solidBlock) || pBounds.contains(solidBlock))
+					return true;
 			}
 		}
 		
@@ -80,7 +80,7 @@ public class Character {
 	public boolean onGround(){
 		boolean onground = false;
 		int xBlocks[] = new int[3];
-		int yBlock = (int) (y + sprite.getHeight()) / Play.TILESIZE;
+		int yBlock = (int) Math.floor((y + sprite.getHeight()) / Play.TILESIZE);
 		
 		xBlocks[0] = (int) x / Play.TILESIZE;
 		xBlocks[1] = (int) (x + sprite.getWidth()/2 ) / Play.TILESIZE;
@@ -94,16 +94,16 @@ public class Character {
 		return onground;
 	}
 	
-	public void gravity(){
+	public void gravity(int delta){
 		if(jumping){
-			if(jumpHeight < MAXJUMP && !isBlocked(x, y - 5)){
+			if(jumpHeight < MAXJUMP && !isBlocked(x, (float) (y - (0.3*delta)))){
 				if(y > 0){
 					jumpHeight += 1;
-					y -= 5;
+					y -= 0.3*delta;
 				}
 				else{
 					jumpHeight = 0;
-					jumping = false;	
+					jumping = false;
 				}
 			}
 			else{
@@ -112,8 +112,8 @@ public class Character {
 			}
 		}
 		else if(!onGround()){
-			if(y + gravitySpeed + sprite.getHeight() < Game.GHEIGHT)
-				y += gravitySpeed;
+			if(y + (0.3 * delta) + sprite.getHeight() < Game.GHEIGHT)
+				y += (0.3 * delta);
 			else{ // die
 				alive = false;
 				Sounds.die.play();

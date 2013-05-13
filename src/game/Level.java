@@ -1,6 +1,9 @@
 package game;
 
+import java.util.ArrayList;
+
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.geom.Point;
 import org.newdawn.slick.tiled.TiledMap;
 
 public class Level {
@@ -94,6 +97,8 @@ public class Level {
 	}
 	
 	public void destroyColors(String color){
+		ArrayList<Point> blocks = new ArrayList<Point>();
+		
 		for(int x = 0; x < map.getHeight(); x++){
 			for(int y = 0; y < map.getWidth(); y++){
 				int tileID = map.getTileId(y, x, 1);
@@ -101,6 +106,7 @@ public class Level {
 				String col = map.getTileProperty(tileID, "color", "none");
 				
 				if(col.equals(color)){
+					blocks.add(new Point(x, y));
 					map.setTileId(y, x, 1, 7);
 					blocked[y][x] = false;
 				}

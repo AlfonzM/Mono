@@ -3,6 +3,7 @@ package game;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
@@ -23,7 +24,7 @@ public class Play extends BasicGameState{
 	public static Level level;
 	public static Player player;
 	
-	public Image arrows, space;
+	public Image arrows, space, skybg;
 	
 	public static ArrayList<Pickable> pickables;
 	public static ArrayList<Mob> mobs;
@@ -34,6 +35,7 @@ public class Play extends BasicGameState{
 		
 		arrows = new Image("res/arrows.png");
 		space = new Image("res/space.png");
+		skybg = new Image("res/skybg.png");
 		
 		Image levelSprite = new Image("res/level.png");
 		levelText = new Image[11];
@@ -60,6 +62,8 @@ public class Play extends BasicGameState{
 	}
 
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
+//		g.drawImage(skybg, 0, 0);
+		g.setBackground(new Color(61, 52, 73, 1));
 		level.map.render(0,0);
 		if(player.alive)
 			g.drawAnimation(player.animation , player.x, player.y);
@@ -99,7 +103,7 @@ public class Play extends BasicGameState{
 				player.jump();
 			}
 			
-			player.gravity();
+			player.gravity(delta);
 			
 			if(input.isKeyDown(Input.KEY_LEFT)){
 				player.move(2);
@@ -134,7 +138,7 @@ public class Play extends BasicGameState{
 		for (Iterator<Mob> iterator = mobs.iterator(); iterator.hasNext();) {
 			Mob m = iterator.next();
 			m.move();
-			m.gravity();
+			m.gravity(delta);
 		}
 		
 		if(currentLevel > 10){
