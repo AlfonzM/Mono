@@ -3,6 +3,7 @@ package game;
 import org.newdawn.slick.Animation;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.geom.Rectangle;
 
 public class Mob extends Character{
 	
@@ -58,6 +59,11 @@ public class Mob extends Character{
 		}
 		
 		sprite = animation.getCurrentFrame();
+	}
+	
+	@Override
+	public Rectangle getBounds(){
+		return new Rectangle(x+10, y, sprite.getWidth()-20, sprite.getHeight() - 10);
 	}
 
 }

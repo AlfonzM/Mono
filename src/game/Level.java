@@ -75,7 +75,7 @@ public class Level {
 		case 8:
 			startX = 26;
 			startY = 5;
-			Play.mobs.add(new Mob(36, 3, 7, 39, 3.2f));
+			Play.mobs.add(new Mob(36, 3, 7, 39, 2.5f));
 			break;
 			
 		case 9:

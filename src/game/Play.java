@@ -57,7 +57,7 @@ public class Play extends BasicGameState{
 			mobs = new ArrayList<Mob>();
 			level = new Level(l);
 			player = new Player(level.startX, level.startY);
-			respawnCounter = 0;			
+			respawnCounter = 0;	
 		}
 	}
 

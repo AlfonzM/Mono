@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tileset name="colors" tilewidth="20" tileheight="20">
- <image source="../tiles/colors.png" width="120" height="40"/>
+ <image source="tiles/colors.png" width="120" height="40"/>
  <tile id="0">
   <properties>
    <property name="blocked" value="false"/>

@@ -25,6 +25,9 @@ public class Menu extends BasicGameState{
 		bgs[3] = new Color(199, 52, 52, 0);
 		bgs[4] = new Color(220, 133, 196, 0);
 		
+		gc.setTargetFrameRate(60);
+		gc.setShowFPS(false);
+		
 		bgcolor = 0;
 		counter = 0;
 	}
